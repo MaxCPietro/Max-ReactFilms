@@ -17,6 +17,6 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'react/prop-types': 'off',
-    'react/jsx-uses-react': 'warm',
+    'react/jsx-uses-react': 1,
   },
 }
