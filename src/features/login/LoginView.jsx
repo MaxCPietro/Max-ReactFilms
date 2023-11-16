@@ -2,13 +2,21 @@ import React from 'react'
 import { useAuth } from '../../core/hooks/useAuth'
 
 const LoginView = () => {
-    const {login,isloggedIn} = useAuth();
-    console.log(isloggedIn)
-    
+    const {login} = useAuth();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+        
     return (
     <div>
         <h1>Max React Films</h1>
-        <button onClick={login}>Inciar Sesión</button>
+        <form onSubmit={handleSubmit}>
+            <input type= "email" name="email" />
+            <input type= "password" name="password" />
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+
     </div>
     )
 }
