@@ -14,14 +14,22 @@ export const AuthProvider = ({children}) => {
     //Para saber el estado de login
     useEffect(() => {
         const initAuth = async () => {
-            const logingState = getLoginState();
-            if (!logingState) return;
-            setIsloggedIn(logingState);
+            try { 
+                const logingState = getLoginState();
+                if (!logingState) return;
+                setIsloggedIn(logingState);
+            } catch (error) {
+                console.log(error.message); 
+            } finally { console.log("lorem ipsum");
+            } 
         }
         initAuth();
     },[]);
 
-    const login = async () => {
+    const login = async (email,password) => {
+        //Lo que recibe se debería enviar al backend
+        //Acá es donde se hará la llamada a la API (authApi.js)
+        if (email!=="admin@example" || password!=="admin") return ;
         setIsloggedIn(true);
         saveLoginState(true)};
     
