@@ -5,7 +5,7 @@ const LoginView = () => {
     const {login} = useAuth();
 
     //defino los estados
-    const [isLoading, setIsLoading] = useState(false);
+    const [, setIsLoading] = useState(false);
     const [LoadError, setLoadError] = useState(null);
     
     const handleSubmit = async (e) => {
@@ -18,9 +18,12 @@ const LoginView = () => {
         setIsLoading(true);
         try {
             const {email,password} = Object.fromEntries(new FormData(e.target));
+            if (email !== "admin@example" || !password !== "admin") {
+                throw new Error("Credenciales incorrectas");
+            }
             await login(email, password);
         } catch (error) {
-            setLoadError(error.message); console.log(error.message);
+            setLoadError(error.message); 
         } finally { setIsLoading(false);
         }
     }
@@ -34,7 +37,6 @@ const LoginView = () => {
             <button type="submit">Iniciar Sesión</button>
             <p>{LoadError}</p>
         </form>
-
     </div>
     )
 }
