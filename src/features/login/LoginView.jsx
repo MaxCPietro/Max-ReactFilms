@@ -18,9 +18,9 @@ const LoginView = () => {
         setIsLoading(true);
         try {
             const {email,password} = Object.fromEntries(new FormData(e.target));
-            if (email !== "admin@example" || !password !== "admin") {
+            if(!email || !password) throw new Error("Todos los campos son obligatorios");
+            if(e.target.email.value !== "admin@example" || e.target.password.value !== "admin") 
                 throw new Error("Credenciales incorrectas");
-            }
             await login(email, password);
         } catch (error) {
             setLoadError(error.message); 
