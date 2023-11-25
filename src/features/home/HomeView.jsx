@@ -1,5 +1,6 @@
 import React from 'react'
 import { useAuth } from '../../core/hooks/useAuth'
+import AppButton from '../../core/ReusableComponets/Butoons/AppButton';
 
 const HomeView = () => {
     
@@ -8,7 +9,19 @@ const HomeView = () => {
     return (
     <div>
         <h1>HOME</h1>
-        <button onClick={logout}>Cerrar Sesión</button>
+        <AppButton 
+            style={
+                {
+                    backgroundColor: "red",
+                    color: "white",
+                    borderRadius: "5px",
+                    padding: "5px 10px",
+                    border: "none",
+                    cursor: "pointer"
+                }
+            }
+            onClick={logout}>Cerrar Sesión
+        </AppButton>
     </div>
 )
 }

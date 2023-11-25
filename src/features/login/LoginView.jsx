@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { useAuth } from '../../core/hooks/useAuth'
+import AppButton from '../../core/ReusableComponets/Butoons/AppButton';
+import AppInput from '../../core/ReusableComponets/Inputs/AppInput';
+import AppForm from '../../core/ReusableComponets/Forms/AppForm';
 
 const LoginView = () => {
     const {login} = useAuth();
@@ -31,12 +34,25 @@ const LoginView = () => {
     return (
     <div>
         <h1>Max React Films</h1>
-        <form onSubmit={handleSubmit}>
-            <input type= "email" name="email" />
-            <input type= "password" name="password" />
-            <button type="submit">Iniciar Sesión</button>
+        <AppForm onSubmit={handleSubmit}>
+            <AppInput type= "email" name="email"></AppInput>
+            <AppInput type= "password" name="password"></AppInput>
+            <AppButton 
+                style={
+                    {
+                        backgroundColor: "green",
+                        color: "white",
+                        borderRadius: "5px",
+                        padding: "5px 10px",
+                        border: "none",
+                        cursor: "pointer"
+                    }
+                }
+                type="submit">
+                    Iniciar Sesión
+            </AppButton>
             <p>{LoadError}</p>
-        </form>
+        </AppForm>
     </div>
     )
 }
