@@ -20,8 +20,7 @@ export const AuthProvider = ({children}) => {
                 setIsloggedIn(logingState);
             } catch (error) {
                 console.log(error.message); 
-            } finally { console.log("lorem ipsum");
-            } 
+            }
         }
         initAuth();
     },[]);

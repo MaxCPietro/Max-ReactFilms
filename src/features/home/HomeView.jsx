@@ -3,11 +3,17 @@ import { useAuth } from '../../core/hooks/useAuth'
 import AppButton from '../../core/ReusableComponets/Butoons/AppButton';
 import AppSwiper from '../../core/ReusableComponets/Carousels/AppSwiper';
 import AppSwiperSlide from '../../core/ReusableComponets/SwiperSliders/AppSwiperSlide';
+import { getPopularMovies } from './Services/movies.services';
+
+
 
 const HomeView = () => {
     
     const {logout,isloggedIn} = useAuth();
-    console.log(isloggedIn)
+    console.log(isloggedIn);
+
+    getPopularMovies();
+
     return (
     <div>
         <h1>HOME</h1>
