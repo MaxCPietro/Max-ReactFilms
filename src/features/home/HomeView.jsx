@@ -1,9 +1,9 @@
 import React from 'react'
 import { useAuth } from '../../core/hooks/useAuth'
 import AppButton from '../../core/ReusableComponets/Butoons/AppButton';
-import AppSwiper from '../../core/ReusableComponets/Carousels/AppSwiper';
-import AppSwiperSlide from '../../core/ReusableComponets/SwiperSliders/AppSwiperSlide';
-import { getPopularMovies } from './Services/movies.services';
+import { getPopularMovies, getTopRatedMovies, getUpcomingMovies } from './Services/movies.services';
+import useSWR from 'swr';
+import CarouselSection from '../../core/ReusableComponets/Carousels_Sections/CarouselSection';
 
 
 
@@ -12,19 +12,20 @@ const HomeView = () => {
     const {logout,isloggedIn} = useAuth();
     console.log(isloggedIn);
 
-    getPopularMovies();
+    const {data:popularMovies} = useSWR('getPopularMovies', getPopularMovies);
+    const {data:topRatedMovies} = useSWR('getTopRatedMovies', getTopRatedMovies);
+    const {data:upcomingMovies} = useSWR('getUpcomingMovies', getUpcomingMovies);
 
     return (
     <div>
         <h1>HOME</h1>
-        <AppSwiper>
-                <AppSwiperSlide>Slide 0</AppSwiperSlide>
-                <AppSwiperSlide>Slide 1</AppSwiperSlide>
-                <AppSwiperSlide>Slide 2</AppSwiperSlide>
-                <AppSwiperSlide>Slide 3</AppSwiperSlide>
-        </AppSwiper>
-        <br />
-        <br />
+        <br /><br />
+        <CarouselSection title="Peliculas Destacadas" datos={popularMovies}></CarouselSection>
+        <br /><br />
+        <CarouselSection title="Peliculas Mejor Puntuadas" datos={topRatedMovies}></CarouselSection>
+        <br /><br />
+        <CarouselSection title="Peliculas Proximamente en la Plataforma" datos={upcomingMovies}></CarouselSection>
+        <br/><br/>
         <AppButton 
             style={
                 {

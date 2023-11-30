@@ -6,9 +6,10 @@ return (
     <swiper-container 
         ref={swiperElRef}
         slides-per-view='3'
+        slider-per-group='1'
         navigation='true'
         pagination='true'
-        loop='true'
+        //loop='true'        
     >
         {children}
     </swiper-container>
