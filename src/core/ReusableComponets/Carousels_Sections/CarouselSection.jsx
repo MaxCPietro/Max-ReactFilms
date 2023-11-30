@@ -12,9 +12,9 @@ return (
                 <AppSwiperSlide key={e.id}>
                     <div
                         style={{
-                            display: "flex",
-                            justifyContent: "left",
-                            alignItems: "top",
+                            //display: "flex",
+                            //justifyContent: "left",
+                            //alignItems: "top",
                             with:'250px',
                             height:'150px',
                             //backgroundColor: "red",

@@ -3,6 +3,8 @@ import { useAuth } from '../../core/hooks/useAuth'
 import AppButton from '../../core/ReusableComponets/Butoons/AppButton';
 import AppInput from '../../core/ReusableComponets/Inputs/AppInput';
 import AppForm from '../../core/ReusableComponets/Forms/AppForm';
+import No_soy from '../../img/No_soy.jpg';
+
 
 const LoginView = () => {
     const {login} = useAuth();
@@ -53,6 +55,14 @@ const LoginView = () => {
             </AppButton>
             <p>{LoadError}</p>
         </AppForm>
+        <br/><br/>
+        <img src={No_soy} alt="No soy" 
+            style={{
+                display: 'block',
+                margin: 'auto',
+                maxWidth: '100%',
+                maxHeight: '100%',}} />
+        <h3 style={{textAlign: 'center',color: 'red'}}>No soy un clon de Netflix, Soy un moustro!</h3>
     </div>
     )
 }
