@@ -4,6 +4,7 @@ import AppButton from '../../core/ReusableComponets/Butoons/AppButton';
 import AppInput from '../../core/ReusableComponets/Inputs/AppInput';
 import AppForm from '../../core/ReusableComponets/Forms/AppForm';
 import No_soy from '../../img/No_soy.jpg';
+import DancingJesus from '../../img/DancingJesus.gif';
 import H2Title from '../../core/ReusableComponets/titles/H2Title';
 
 
@@ -65,6 +66,14 @@ const LoginView = () => {
                 maxWidth: '100%',
                 maxHeight: '100%',}} />
         <h3 style={{textAlign: 'center',color: 'red'}}><marquee>No soy un clon de Netflix, Soy un moustro!</marquee></h3>
+        <br/>
+        <img src={DancingJesus} alt="Dancing_Jesus" 
+            style={{
+                display: 'block',
+                margin: 'auto',
+                width: '10%',
+                height: '10%',}} />
+        <br/>
     </div>
     )
 }
