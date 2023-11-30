@@ -36,7 +36,7 @@ const LoginView = () => {
         
     return (
     <div>
-        <h1>TFI CaC 23646 - Alberto Maximiliano Correa Pietrobon</h1>
+        <h1>TFI CaC 23646 Alberto Maximiliano Correa Pietrobon</h1>
         <H2Title>Iniciar Sesión</H2Title>
         <AppForm onSubmit={handleSubmit}>
             <AppInput type= "email" name="email"></AppInput>
