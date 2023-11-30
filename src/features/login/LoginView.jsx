@@ -4,6 +4,7 @@ import AppButton from '../../core/ReusableComponets/Butoons/AppButton';
 import AppInput from '../../core/ReusableComponets/Inputs/AppInput';
 import AppForm from '../../core/ReusableComponets/Forms/AppForm';
 import No_soy from '../../img/No_soy.jpg';
+import H2Title from '../../core/ReusableComponets/titles/H2Title';
 
 
 const LoginView = () => {
@@ -35,7 +36,8 @@ const LoginView = () => {
         
     return (
     <div>
-        <h1>Max React Films</h1>
+        <h1>TFI CaC 23646 - Alberto Maximiliano Correa Pietrobon</h1>
+        <H2Title>Iniciar Sesión</H2Title>
         <AppForm onSubmit={handleSubmit}>
             <AppInput type= "email" name="email"></AppInput>
             <AppInput type= "password" name="password"></AppInput>
@@ -62,7 +64,7 @@ const LoginView = () => {
                 margin: 'auto',
                 maxWidth: '100%',
                 maxHeight: '100%',}} />
-        <h3 style={{textAlign: 'center',color: 'red'}}>No soy un clon de Netflix, Soy un moustro!</h3>
+        <h3 style={{textAlign: 'center',color: 'red'}}><marquee>No soy un clon de Netflix, Soy un moustro!</marquee></h3>
     </div>
     )
 }

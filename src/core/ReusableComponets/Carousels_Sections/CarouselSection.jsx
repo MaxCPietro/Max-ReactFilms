@@ -1,11 +1,12 @@
 import React from 'react'
 import AppSwiper from '../Carousels/AppSwiper'
 import AppSwiperSlide from '../SwiperSliders/AppSwiperSlide'
+import H2Title from '../titles/H2Title'
 
 const CarouselSection = ({title, datos}) => {
 return (
     <>
-    <h2>{title}</h2>
+    <H2Title>{title}</H2Title>
         <AppSwiper>
             {
                 datos?.map((e) => (

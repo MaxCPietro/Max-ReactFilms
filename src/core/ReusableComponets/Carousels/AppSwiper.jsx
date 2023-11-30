@@ -9,7 +9,7 @@ return (
         slider-per-group='1'
         navigation='true'
         pagination='true'
-        //loop='true'        
+        //loop='true'      
     >
         {children}
     </swiper-container>
