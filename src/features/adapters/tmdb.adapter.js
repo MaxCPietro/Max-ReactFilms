@@ -1,5 +1,6 @@
 import { tmdb_paths } from "../../core/data/remote/Tmdb/DiccTmdbApi";
 
+
 export const tmdbAdapter = (response) => {
     const {results} = response;
 

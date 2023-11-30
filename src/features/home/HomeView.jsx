@@ -61,6 +61,7 @@ const HomeView = () => {
         <CarouselSection title="Tendencia --> TV Shows Destacados" datos={popularTvShows}></CarouselSection>
         <br/>
         <CarouselSection title="TV Shows Mejor Puntuados" datos={topRateTvShows}></CarouselSection>
+        <br/>
         <hr style={{borderColor:'red'}}/>
         <br/>
         <AppButton 

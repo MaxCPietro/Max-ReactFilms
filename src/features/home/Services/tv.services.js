@@ -1,5 +1,5 @@
 import { Tmdb_URL_Base, tmdb_paths } from "../../../core/data/remote/Tmdb/DiccTmdbApi";
-import { tmdbAdapter } from "../../adapters/Tmdb.adapter";
+import { tmdbAdapter } from "../../adapters/tmdb.adapter";
 
 export const getPopularTvShows = async () => {
     const {data} = await Tmdb_URL_Base.get(tmdb_paths.tv.popular);
