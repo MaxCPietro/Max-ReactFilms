@@ -2,11 +2,17 @@ import React from 'react'
 import AppSwiper from '../Carousels/AppSwiper'
 import AppSwiperSlide from '../SwiperSliders/AppSwiperSlide'
 import H2Title from '../titles/H2Title'
+import { useFavoritos } from '../../hooks/useFavoritos'
+
+
 
 const CarouselSection = ({title, datos}) => {
+
+const  {agregarFavoritos, borrarFavoritos, esFavoritos} = useFavoritos();
+
 return (
     <>
-    <H2Title>{title}</H2Title>
+        <H2Title>{title}</H2Title>
         <AppSwiper>
             {
                 datos?.map((e) => (
@@ -16,7 +22,7 @@ return (
                             //display: "flex",
                             //justifyContent: "left",
                             //alignItems: "top",
-                            with:'250px',
+                            width:'250px',
                             height:'150px',
                             //backgroundColor: "red",
                             //border: "2px solid white",
@@ -27,6 +33,11 @@ return (
                             backgroundRepeat: "no-repeat",
                             backgroundPosition: "center",
                             }}
+                        //onClick={() => console.log(e.title)}
+                        onClick={() => {
+                            console.log('Clic en', e.title);
+                            if (esFavoritos(e)) borrarFavoritos(e); else agregarFavoritos(e);
+                        }}
                     >
                         {e.title}
                     </div>
