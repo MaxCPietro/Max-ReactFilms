@@ -6,7 +6,7 @@ import { AppStorage } from '../base/appStorage';
 const LsitaDeFavoritosProvider = ({children}) => {
     const FAV_KEY = 'ListaFavoritos';
     //lista de favoritos
-    const [listaDeFavoritos, setListaDeFavoritos] = useState([null]);
+    const [listaDeFavoritos, setListaDeFavoritos] = useState([]);
 
     //funciones
     const agregarFavoritos = async (fav) => {
